@@ -10,7 +10,6 @@ Asegúrate de tener un archivo `.env` configurado en la raíz del proyecto antes
 
 Para construir, descargar e iniciar los servicios:
 
-```bash
 docker compose build
 docker compose pull
 docker compose up -d
