@@ -6,7 +6,9 @@ Primero hay que asegurarse de tener un archivo .env en la raíz del proyecto
 Luego se ejecuta lo siguiente:
 
 docker compose build
+
 docker compose pull
+
 docker compose up -d
 
 Servicios disponibles
