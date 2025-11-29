@@ -12,9 +12,9 @@ project/
 
 ├── feature-builder/
 
-│     ├── Dockerfile
-
-│     └── build_features.py 
+	     ├── Dockerfile
+	
+	     └── build_features.py 
 
 │
 ├── notebooks/
