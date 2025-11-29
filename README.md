@@ -109,4 +109,34 @@ Detalles de la Ejecución:
       -Revisión de fechas mínimas/máximas y días sin datos.
  
       
-      
+5. Explicación Breve de las Columnas de analytics.daily_features
+
+La tabla analytics.daily_features es una "One Big Table" donde cada fila representa:
+  1 día bursátil para 1 activo
+
+Identificación del día
+| Columna                        | Descripción                            |
+| ------------------------------ | -------------------------------------- |
+| `date`                         | Fecha del dato                         |
+| `ticker`                       | Símbolo del activo (AAPL, MSFT, TSLA…) |
+| `year`, `month`, `day_of_week` | Componentes de fecha para ML           |
+
+Datos del mercado
+| Columna                        | Descripción                    |
+| ------------------------------ | ------------------------------ |
+| `open`, `close`, `high`, `low` | Precios diarios estándar       |
+| `volume`                       | Volumen negociado ese día      |
+| `adj_close`                    | Precio ajustado (viene de RAW) |
+
+Features derivadas
+| Feature             | Fórmula                        | Interpretación          |
+| ------------------- | ------------------------------ | ----------------------- |
+| `return_close_open` | `(close - open) / open`        | Retorno intradía        |
+| `return_prev_close` | `close / close_lag1 - 1`       | Retorno vs día anterior |
+| `volatility_5d`     | `std(retornos últimos 5 días)` | Volatilidad reciente    |
+
+Metadatos
+| Columna           | Descripción                                |
+| ----------------- | ------------------------------------------ |
+| `run_id`          | Identificador de la ejecución del pipeline |
+| `ingested_at_utc` | Timestamp de creación de las features      |
