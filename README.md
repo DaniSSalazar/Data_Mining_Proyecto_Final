@@ -1,5 +1,22 @@
 # Proyecto 06 — Pipeline de Datos para Trading Algorítmico (Mercado)
 
+Estructura general del proyecto
+
+project/
+│
+├── docker-compose.yml
+├── .env.example
+├── feature-builder/
+│     ├── Dockerfile
+│     └── build_features.py   
+│
+├── notebooks/
+│     └── 01_ingesta_prices_raw.ipynb 
+			└── 02_build_features_prototipo.ipynb
+			└── 03_verificacion.ipynb
+  │
+└── requirements.txt
+
 1. Cómo levantar el entorno con Docker Compose
 
 Primero hay que asegurarse de tener un archivo .env en la raíz del proyecto 
