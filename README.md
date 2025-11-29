@@ -29,6 +29,16 @@ La ingesta inicial de datos OHLCV (Precios Diarios) se realiza a través de un J
 
 Notebook de Ingesta
 
-Ejecuta el siguiente notebook para poblar la tabla raw.prices_daily:
+Ejecutar el siguiente notebook para poblar la tabla raw.prices_daily:
 
 notebooks/01_ingesta_prices_raw.ipynb
+
+Funcionalidad del Notebook:
+
+Lee las variables TICKERS, START_DATE, y END_DATE del entorno (.env).
+
+Descarga datos OHLCV históricos desde Yahoo Finance utilizando yfinance.
+
+Limpia, estandariza columnas e inserta los datos en la tabla raw.prices_daily de PostgreSQL.
+
+Muestra logs detallados (filas descargadas, fechas min/máx por ticker, conteo de filas en Postgres).
