@@ -42,3 +42,24 @@ Funcionalidad del Notebook:
    -Limpia, estandariza columnas e inserta los datos en la tabla raw.prices_daily de PostgreSQL.
    
    -Muestra logs detallados (filas descargadas, fechas min/máx por ticker, conteo de filas en Postgres).
+
+
+3. Construcción de Features — feature-builder
+   
+La tabla de features (analytics.daily_features) se construye ejecutando un script CLI dentro del contenedor feature-builder, no en Jupyter.
+
+Comando General
+
+Utilizar el siguiente formato para procesar un activo
+
+docker compose run feature-builder --mode full --ticker <TICKER> --overwrite true
+
+Ejemplos para los 3 Activos
+
+Se debe ejecutar este comando para cada uno de los activos (AAPL, MSFT, TSLA):
+
+docker compose run feature-builder --mode full --ticker AAPL --overwrite true
+
+docker compose run feature-builder --mode full --ticker MSFT --overwrite false
+
+docker compose run feature-builder --mode full --ticker TSLA --overwrite false
