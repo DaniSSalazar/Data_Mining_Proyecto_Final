@@ -21,3 +21,14 @@ Servicios
 | **Jupyter Notebook** | [http://localhost:8888/lab](http://localhost:8888/lab)                   | Ingesta y análisis de datos         |
 | **pgAdmin**          | [http://localhost:5050/login?next=/](http://localhost:5050/login?next=/) | UI para explorar PostgreSQL         |
 | **Postgres**         | `docker exec -it postgres bash`                                          | Acceso a la base de datos vía shell |
+
+
+2. Comandos de Ingesta de Datos (RAW)
+   
+La ingesta inicial de datos OHLCV (Precios Diarios) se realiza a través de un Jupyter Notebook.
+
+Notebook de Ingesta
+
+Ejecuta el siguiente notebook para poblar la tabla raw.prices_daily:
+
+notebooks/01_ingesta_prices_raw.ipynb
