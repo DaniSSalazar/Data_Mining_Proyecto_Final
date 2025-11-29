@@ -23,17 +23,27 @@ Servicios disponibles
 
 La ingesta de datos de mercado se realiza corriendo el notebook:
 notebooks/01_ingesta_prices_raw.ipynb
+
 Este notebook:
+
   -Lee las variables de ambiente
+  
   -Descarga precios diarios OHLCV vía Yahoo Finance
+  
   -Estandariza columnas
+  
   -Inserta en raw.prices_daily
+  
   -Imprime conteos y fechas mín/máx
 
 Hay que asegurarse de tener configurado en en el .env:
-TICKERS=AAPL,MSFT,TSLA
-START_DATE=2019-01-01
-END_DATE=2025-01-01
+
+    TICKERS=AAPL,MSFT,TSLA
+    
+    START_DATE=2019-01-01
+    
+    END_DATE=2025-01-01
+
 
 
 3. Comando para construir la tabla analytics.daily_features
@@ -41,10 +51,13 @@ END_DATE=2025-01-01
 Esto lo hace el servicio feature-builder, ejecutando el script CLI build_features.py.
 
 Construir las features para un ticker (sobrescribir):
+
 docker compose run feature-builder --mode full --ticker AAPL --overwrite true
 
 Para los otros tickers:
+
 docker compose run feature-builder --mode full --ticker MSFT --overwrite false
+
 docker compose run feature-builder --mode full --ticker TSLA --overwrite false
 
 Cada ejecución:
