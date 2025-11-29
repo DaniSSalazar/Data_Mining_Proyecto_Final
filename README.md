@@ -140,3 +140,23 @@ Metadatos
 | ----------------- | ------------------------------------------ |
 | `run_id`          | Identificador de la ejecución del pipeline |
 | `ingested_at_utc` | Timestamp de creación de las features      |
+
+6. Reproducibilidad
+
+Para reconstruir el proyecto desde cero:
+
+  docker compose down -v
+  
+  docker compose build
+  
+  docker compose up -d
+
+Luego:
+
+  Ejecutar el notebook 01_ingesta_prices_raw.ipynb
+  
+  Ejecutar el feature-builder para cada ticker
+
+  Ejecutar Verificación (Notebook):
+
+   Ejecutar 03_verificacion.ipynb
