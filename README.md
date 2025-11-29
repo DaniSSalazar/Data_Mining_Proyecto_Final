@@ -17,7 +17,8 @@ docker compose up -d
 
 Servicios
 
-Servicio,URL,Descripción
-Jupyter Notebook,http://localhost:8888/lab,Entorno de desarrollo para la ejecución de notebooks.
-pgAdmin,http://localhost:5050/login?next=/,Interfaz gráfica para la administración de PostgreSQL.
-Postgres,docker exec -it postgres bash,Acceso a la base de datos desde la consola del contenedor.
+| Servicio             | URL                                                                      | Descripción                         |
+| -------------------- | ------------------------------------------------------------------------ | ----------------------------------- |
+| **Jupyter Notebook** | [http://localhost:8888/lab](http://localhost:8888/lab)                   | Ingesta y análisis de datos         |
+| **pgAdmin**          | [http://localhost:5050/login?next=/](http://localhost:5050/login?next=/) | UI para explorar PostgreSQL         |
+| **Postgres**         | `docker exec -it postgres bash`                                          | Acceso a la base de datos vía shell |
