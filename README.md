@@ -63,3 +63,51 @@ docker compose run feature-builder --mode full --ticker AAPL --overwrite true
 docker compose run feature-builder --mode full --ticker MSFT --overwrite false
 
 docker compose run feature-builder --mode full --ticker TSLA --overwrite false
+
+
+Detalles de la Ejecución:
+
+✔ Lee datos de precios desde raw.prices_daily.
+
+✔ Calcula las features diarias (retornos, volatilidad, etc.).
+
+✔ Sobrescribe la tabla de resultados: analytics.daily_features.
+
+✔ Imprime logs del proceso (filas procesadas, fecha min/max).
+
+4. Descripción de los Notebooks Incluidos
+01_ingesta_prices_raw.ipynb
+
+Objetivo: Poblar la tabla de datos crudos (raw.prices_daily).
+
+Lectura de variables de entorno (os.getenv).
+
+Descarga de datos y limpieza.
+
+Inserción en Postgres usando SQLAlchemy.
+
+Validación de fechas y conteos.
+
+ 02_build_features_prototipo.ipynb
+ 
+Objetivo: Área de pruebas para el desarrollo de transformaciones antes de su codificación final en el script (build_features.py).
+
+Carga manual de datos RAW para un solo ticker.
+
+Pruebas de cálculos de features (retornos, volatilidad rolling).
+
+Validación de estructura (shape y nulls).
+
+Exportación temporal a analytics.daily_features.
+
+03_verificacion.ipynb
+
+Objetivo: Validar que el pipeline completo se haya ejecutado correctamente.
+
+Verificaciones de conteos de filas (RAW vs ANALYTICS).
+
+Revisión de fechas mínimas/máximas y días sin datos.
+
+Inspección de valores nulos y variabilidad por columna.
+
+Generación de gráficos simples para inspección visual.
