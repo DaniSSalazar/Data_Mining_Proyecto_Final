@@ -61,12 +61,19 @@ docker compose run feature-builder --mode full --ticker MSFT --overwrite false
 docker compose run feature-builder --mode full --ticker TSLA --overwrite false
 
 Cada ejecución:
+
   -Lee datos desde raw.prices_daily
+  
   -Calcula features de mercado
+  
   -Inserta (o sobrescribe) en analytics.daily_features
+  
   -Muestra logs:
+  
     -filas procesadas
+    
     -fecha mínima
+    
     -fecha máxima
 
 4. Explicación breve de las columnas principales de analytics.daily_features
