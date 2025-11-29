@@ -17,9 +17,10 @@ project/
 	     └── build_features.py 
 
 │
+
 ├── notebooks/
 
-│     └── 01_ingesta_prices_raw.ipynb 
+     		└── 01_ingesta_prices_raw.ipynb 
 
 			└── 02_build_features_prototipo.ipynb
 			
