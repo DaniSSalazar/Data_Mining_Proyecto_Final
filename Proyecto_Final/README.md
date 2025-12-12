@@ -1,3 +1,5 @@
+Aclaración! Todas las carpetas afuera de Proyecto_Final pertenecen al Proyecto 06
+
 # Estructura del Proyecto
 
 * **Proyecto_Final/** (Directorio Raíz)
