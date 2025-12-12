@@ -144,6 +144,38 @@ JSON
 
 Interpretación:
 
-* 1 → se espera que TSLA cierre al alza
+* 1 → se espera que TSLA cierre con alza
 
-* 0 → se espera que cierre a la baja
+* 0 → se espera que cierre con una baja
+
+## 5. Simulación de Inversión — Capital Inicial: USD 10,000 (Año 2025)
+
+La simulación se encuentra al final del notebook en la última sección. 
+
+### Estrategia Aplicada
+
+Consiste en aplicar la regla:
+
+* Si el modelo predice subida (**1**), se **compra al *open*** y se **vende al *close*** (operación de un día).
+* Si predice bajada (**0**), **no se opera** ese día.
+
+### Procedimiento de Simulación
+
+1.  Filtrar únicamente datos del año **2025**.
+2.  Generar predicciones con el modelo seleccionado (se usan los mismos features que se utilizaron para entrenar el mejor modelo).
+3.  Simular la evolución del capital:
+    * Registrar la **curva de *equity***  y métricas:
+        * Capital final
+        * Retorno total (%)
+        * Retorno anualizado
+        * Máximo *drawdown*
+        * Número de operaciones
+
+### Análisis de Resultados
+
+La simulación permite comparar:
+
+* Métricas estadísticas del modelo (**F1, ROC-AUC**)
+* Resultados económicos **reales**
+
+y analizar situaciones donde un buen desempeño en ML no implica necesariamente un mejor desempeño financiero — por ejemplo, cuando los aciertos ocurren en días de baja magnitud y los errores en días de alto impacto.
