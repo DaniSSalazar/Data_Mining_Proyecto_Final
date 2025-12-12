@@ -99,3 +99,51 @@ Una vez desplegada, la API está disponible en:
 http://localhost:8000
 
 Documentación Swagger: http://localhost:8000/docs
+
+## 4. Uso del Endpoint `/predict`
+
+El modelo requiere un vector completo de *features*, consistente con el entrenamiento.
+
+### Ejemplo de Solicitud:
+
+curl -X POST "http://localhost:8000/predict" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "open": 248.93,
+    "high_lag1": 6427.93,
+    "low_lag1": 402.54,
+    "range_lag1": 0.0599,
+    "volume": 9710700,
+    "volume_lag1": 76825100,
+    "volume_lag2": 64941000,
+    "volume_ma5_lag1": 1000,
+    "volume_rel": 0.72,
+    "return_prev_close_lag1": 0.0123,
+    "return_prev_close_lag2": -0.0021,
+    "return_close_open_lag1": 0.0041,
+    "volatility_5d_lag1": 0.025,
+    "volatility_5d_lag2": 0.028,
+    "sma_5": 410.22,
+    "ema_5": 423.70,
+    "momentum_5": -0.064,
+    "rsi_14": 50.56,
+    "macd": 23.83,
+    "macd_signal": 32.66,
+    "boll_position": -0.21,
+    "dist_max_5": -0.12,
+    "dist_min_5": 0.00,
+    "day_of_week": 3,
+    "month": 1
+  }'
+
+Respuesta:
+
+JSON
+
+{ "prediction": 1 }
+
+Interpretación:
+
+* 1 → se espera que TSLA cierre al alza
+
+* 0 → se espera que cierre a la baja
