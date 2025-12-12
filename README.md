@@ -60,9 +60,9 @@ Se debe ejecutar este comando para cada uno de los activos (AAPL, MSFT, TSLA):
 
 docker compose run feature-builder --mode full --ticker AAPL --overwrite true
 
-docker compose run feature-builder --mode full --ticker MSFT --overwrite false
+docker compose run feature-builder --mode full --ticker MSFT --overwrite true
 
-docker compose run feature-builder --mode full --ticker TSLA --overwrite false
+docker compose run feature-builder --mode full --ticker TSLA --overwrite true
 
 
 Detalles de la Ejecución:
@@ -155,7 +155,7 @@ Luego:
 
   Ejecutar el notebook 01_ingesta_prices_raw.ipynb
   
-  Ejecutar el feature-builder para cada ticker
+  Ejecutar el feature-builder para el ticker deseado (se escogió Tesla - TSLA)
 
   Ejecutar Verificación (Notebook):
 
