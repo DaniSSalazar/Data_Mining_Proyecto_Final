@@ -1,48 +1,6 @@
 # Estructura General
 
-PSet6/
-
-│
-
-├── api/
-
-│   ├── app.py                  # API FastAPI para inferencia del modelo
-
-│   ├── Dockerfile              # Imagen Docker del servicio de predicción
-
-│   ├── requirements.txt        # Dependencias del servicio API
-
-│
-
-├── feature-builder/
-
-│   ├── build_features.py       # Script para generar features desde datos raw
-
-│   ├── requirements.txt
-
-│   └── Dockerfile
-
-│
-
-├── model/
-
-│   └── best_model.pkl          # Pipeline completo (preprocess + modelo)
-
-│
-
-├── notebooks/
-
-│   └── ml_trading_classifier.ipynb
-
-│
-
-├── docker-compose.yml           # Orquestación de Postgres, API, Jupyter
-
-├── requirements.txt             # Dependencias generales
-
-├── .env                         # Variables de entorno (Postgres, etc.)
-
-├── .env.example
+PSet6/ │ ├── api/ │   ├── app.py                  # API FastAPI para inferencia del modelo │   ├── Dockerfile              # Imagen Docker del servicio de predicción │   └── requirements.txt        # Dependencias del servicio API │ ├── feature-builder/ │   ├── build_features.py       # Script para generar features desde datos raw │   ├── requirements.txt │   └── Dockerfile │ ├── model/ │   └── best_model.pkl          # Pipeline completo (preprocess + modelo) │ ├── notebooks/ │   └── ml_trading_classifier.ipynb │       # Notebook principal (EDA, Feature Engineering, Modelado, Simulación) │ ├── docker-compose.yml           # Orquestación de Postgres, API, Jupyter ├── requirements.txt             # Dependencias generales ├── .env                         # Variables de entorno (Postgres, etc.) └── .env.example
 
 # Descripción General
 
