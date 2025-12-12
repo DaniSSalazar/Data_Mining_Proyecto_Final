@@ -1,6 +1,22 @@
-# Estructura General
+# Estructura del Proyecto
 
-PSet6/ │ ├── api/ │   ├── app.py                  # API FastAPI para inferencia del modelo │   ├── Dockerfile              # Imagen Docker del servicio de predicción │   └── requirements.txt        # Dependencias del servicio API │ ├── feature-builder/ │   ├── build_features.py       # Script para generar features desde datos raw │   ├── requirements.txt │   └── Dockerfile │ ├── model/ │   └── best_model.pkl          # Pipeline completo (preprocess + modelo) │ ├── notebooks/ │   └── ml_trading_classifier.ipynb │       # Notebook principal (EDA, Feature Engineering, Modelado, Simulación) │ ├── docker-compose.yml           # Orquestación de Postgres, API, Jupyter ├── requirements.txt             # Dependencias generales ├── .env                         # Variables de entorno (Postgres, etc.) └── .env.example
+* **Proyecto_Final/** (Directorio Raíz)
+    * **api/** (Servicio de Inferencia FastAPI)
+        * `app.py`: API FastAPI principal para servir predicciones del modelo.
+        * `Dockerfile`: Imagen Docker para el despliegue del servicio API.
+        * `requirements.txt`: Dependencias específicas del servicio API.
+    * **feature-builder/** (Generación de *Features*)
+        * `build_features.py`: Script para generar *features* (lags, indicadores, etc.) desde datos *raw*.
+        * `requirements.txt`: Dependencias para la construcción de *features*.
+        * `Dockerfile`: Imagen Docker para el proceso de *feature engineering*.
+    * **model/** (Modelos Persistidos)
+        * `best_model.pkl`: Pipeline completo persistido (preprocesamiento + modelo final entrenado).
+    * **notebooks/** (Análisis y Desarrollo)
+        * `ml_trading_classifier.ipynb`: Notebook principal con el flujo de trabajo completo.
+    * `docker-compose.yml`:  Orquestación de contenedores (Postgres, API, Jupyter).
+    * `requirements.txt`: Dependencias generales del proyecto (entorno principal).
+    * `.env`: Variables de entorno para la configuración local (credenciales, puertos).
+    * `.env.example`: Ejemplo de variables de entorno (plantilla).
 
 # Descripción General
 
