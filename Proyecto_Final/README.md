@@ -1,3 +1,49 @@
+# Estructura General
+
+PSet6/
+
+│
+
+├── api/
+
+│   ├── app.py                  # API FastAPI para inferencia del modelo
+
+│   ├── Dockerfile              # Imagen Docker del servicio de predicción
+
+│   ├── requirements.txt        # Dependencias del servicio API
+
+│
+
+├── feature-builder/
+
+│   ├── build_features.py       # Script para generar features desde datos raw
+
+│   ├── requirements.txt
+
+│   └── Dockerfile
+
+│
+
+├── model/
+
+│   └── best_model.pkl          # Pipeline completo (preprocess + modelo)
+
+│
+
+├── notebooks/
+
+│   └── ml_trading_classifier.ipynb
+
+│
+
+├── docker-compose.yml           # Orquestación de Postgres, API, Jupyter
+
+├── requirements.txt             # Dependencias generales
+
+├── .env                         # Variables de entorno (Postgres, etc.)
+
+├── .env.example
+
 # Descripción General
 
 Este proyecto desarrolla un modelo de Machine Learning capaz de predecir si la acción de Tesla Inc. (TSLA) cerrará al con un incremento o disminución en el precio, utilizando únicamente información disponible al inicio del día (lags, indicadores técnicos y variables derivadas).
