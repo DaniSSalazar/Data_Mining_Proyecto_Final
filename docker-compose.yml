@@ -1,0 +1,85 @@
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DB}
+    ports:
+      - "${PG_PORT}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - dm-net
+
+  jupyter:
+    image: jupyter/scipy-notebook:latest
+    container_name: jupyter
+    depends_on:
+      - postgres
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./requirements.txt:/home/jovyan/work/requirements.txt
+    environment:
+      PG_HOST: ${PG_HOST}
+      PG_PORT: ${PG_PORT}
+      PG_DB: ${PG_DB}
+      PG_USER: ${PG_USER}
+      PG_PASSWORD: ${PG_PASSWORD}
+      PG_SCHEMA_RAW: ${PG_SCHEMA_RAW}
+      PG_SCHEMA_ANALYTICS: ${PG_SCHEMA_ANALYTICS}
+      TICKERS: ${TICKERS}
+      START_DATE: ${START_DATE}
+      END_DATE: ${END_DATE}
+      DATA_PROVIDER: ${DATA_PROVIDER}
+      RUN_ID: ${RUN_ID}
+
+    ports:
+      - "8888:8888"
+    command: >
+      bash -c "pip install -r work/requirements.txt &&
+               start-notebook.sh --NotebookApp.token=''"
+    networks:
+      - dm-net
+
+  feature-builder:
+    build: ./feature-builder
+    container_name: feature-builder
+    depends_on:
+      - postgres
+    environment:
+      PG_HOST: ${PG_HOST}
+      PG_PORT: ${PG_PORT}
+      PG_DB: ${PG_DB}
+      PG_USER: ${PG_USER}
+      PG_PASSWORD: ${PG_PASSWORD}
+      PG_SCHEMA_RAW: ${PG_SCHEMA_RAW}
+      PG_SCHEMA_ANALYTICS: ${PG_SCHEMA_ANALYTICS}
+
+    networks:
+      - dm-net
+    entrypoint: ["python", "build_features.py"]
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - dm-net
+
+
+networks:
+  dm-net:
+
+volumes:
+  postgres_data:
