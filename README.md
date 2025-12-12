@@ -6,7 +6,7 @@ Este proyecto implementa un pipeline de datos individual utilizando Docker Compo
 
 ##  1. Cómo Levantar el Entorno con Docker Compose
 
-Asegúrate de tener un archivo `.env` configurado en la raíz del proyecto antes de continuar.
+Hay que asegurarse de tener un archivo `.env` configurado en la raíz del proyecto antes de continuar.
 
 Para construir, descargar e iniciar los servicios:
 
@@ -58,11 +58,11 @@ Ejemplos para los 3 Activos
 
 Se debe ejecutar este comando para cada uno de los activos (AAPL, MSFT, TSLA):
 
-docker compose run feature-builder --mode full --ticker AAPL --overwrite true
+* docker compose run feature-builder --mode full --ticker AAPL --overwrite true
 
-docker compose run feature-builder --mode full --ticker MSFT --overwrite true
+* docker compose run feature-builder --mode full --ticker MSFT --overwrite true
 
-docker compose run feature-builder --mode full --ticker TSLA --overwrite true
+* docker compose run feature-builder --mode full --ticker TSLA --overwrite true
 
 
 Detalles de la Ejecución:
