@@ -61,7 +61,6 @@ Cada modelo se evalúa con:
 
 El modelo seleccionado se entrena utilizando **Train + Validation** y se exporta como un pipeline completo:
 
-```python
 joblib.dump(pipeline_final, "model/best_model.pkl")
 
 Este pipeline contiene:
