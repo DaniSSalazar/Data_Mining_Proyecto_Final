@@ -15,7 +15,7 @@
         * `ml_trading_classifier.ipynb`: Notebook principal con el flujo de trabajo completo.
     * `docker-compose.yml`:  Orquestación de contenedores (Postgres, API, Jupyter).
     * `requirements.txt`: Dependencias generales del proyecto (entorno principal).
-    * `.env`: Variables de entorno para la configuración local (credenciales, puertos).
+    * `.env`: Variables de entorno para la configuración local (credenciales, puertos).Este archivo no se subirá
     * `.env.example`: Ejemplo de variables de entorno (plantilla).
 
 # Descripción General
