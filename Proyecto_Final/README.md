@@ -7,7 +7,6 @@
         * `requirements.txt`: Dependencias específicas del servicio API.
     * **feature-builder/** (Generación de *Features*)
         * `build_features.py`: Script para generar *features* (lags, indicadores, etc.) desde datos *raw*.
-        * `requirements.txt`: Dependencias para la construcción de *features*.
         * `Dockerfile`: Imagen Docker para el proceso de *feature engineering*.
     * **model/** (Modelos Persistidos)
         * `best_model.pkl`: Pipeline completo persistido (preprocesamiento + modelo final entrenado).
