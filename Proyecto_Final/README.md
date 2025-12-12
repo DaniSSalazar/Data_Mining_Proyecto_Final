@@ -118,7 +118,7 @@ Una vez desplegada, la API está disponible en:
 
 http://localhost:8000
 
-Documentación Swagger: http://localhost:8000/docs
+Documentación Swagger: http://localhost:8000/docs y localhost:8000/docs#/default/predict_predict_post
 
 ## 4. Uso del Endpoint `/predict`
 
